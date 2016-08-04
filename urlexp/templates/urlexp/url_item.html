@@ -1,0 +1,25 @@
+<html>
+	<head> <title> URL Expanded</title></head>
+	<body> 
+	<h1>Welcome to the URL Expander</h1>
+	<h2>
+		Here's the information about the url
+
+
+	</h2>
+	<h3>{{ info.title }}</h3>
+			<p>
+				<b>Shortened URL: </b>{{ info.short }}
+			</p>
+			<p>
+				<b>Expanded URL: </b>{{ info.expanded }}
+			</p>
+			<p>
+				<b>HTTP Status Code: </b>{{ info.status }}
+			</p>
+			<p><a href="{% url 'delete_url' pk=info.pk %}">Delete this record</a></p>
+	<h3>
+		Go back to the main page <a href="{% url 'url_list' %}">here</a>
+	</h3>
+	</body>
+</html>

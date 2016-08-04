@@ -1,0 +1,32 @@
+<html>
+	<head> <title> URL Expander List</title></head>
+	<body> 
+	<h1>Welcome to the URL Expander</h1>
+	<h2>Enter a shortened URL here: </h2>
+		<form method="POST">{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Expand!</button>
+		</form>
+	<p>* Make sure to add " http:// " at the beginning of the url</p>
+
+	
+	<h2> Here's a list URLS that have been expanded</h2>
+		{% for info in info_list %}
+		<div>
+			<h3><a href="{% url 'info_detail' pk=info.pk %}">{{ info.title }}</a></h3>
+			<p>
+				<b>Shortened URL: </b>{{ info.short }}
+			</p>
+			<p>
+				<b>Expanded URL: </b>{{ info.expanded }}
+			</p>
+			<p>
+				<b>Status Code: </b>{{ info.status }}
+			</p>
+			<p><a href="{% url 'delete_url' pk=info.pk %}">Delete this record</a></p>
+		</div>
+		
+		{% endfor %}
+	
+	</body>
+</html>
