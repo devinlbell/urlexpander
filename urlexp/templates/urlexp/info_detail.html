@@ -17,9 +17,16 @@
 			<p>
 				<b> HTTP Status Code: </b>{{ info.status }}
 			</p>
+			<p>
+				<b>Wayback Machine URL: </b> {{ info.waybackUrl }}
+			</p>
+			<p>
+				<b>Wayback Machine Timestamp: </b> {{ info.waybackTime }}
+			</p>
 			<p><a href="{% url 'delete_url' pk=info.pk %}">Delete this record</a></p>
 	<h3>
-		Go back to the main page <a href="{% url 'url_list' %}">here</a>
+		Go back to the main page <a href="{% url 'url_list' %}">here</a><br>
+		<p>Or logout <a href="{% url 'logout_view' %}">here</a></p> 
 	</h3>
 	</body>
 </html>

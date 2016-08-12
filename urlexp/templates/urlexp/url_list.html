@@ -2,12 +2,13 @@
 	<head> <title> URL Expander List</title></head>
 	<body> 
 	<h1>Welcome to the URL Expander</h1>
+	<p><a href="{% url 'logout_view' %}">Logout</a></p>
 	<h2>Enter a shortened URL here: </h2>
 		<form method="POST">{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit">Expand!</button>
 		</form>
-	<p>* Make sure to add " http:// " at the beginning of the url</p>
+	<p>* Make sure to add " http:// " at the beginning of the url and a .com to the end of it</p>
 
 	
 	<h2> Here's a list URLS that have been expanded</h2>
@@ -22,6 +23,12 @@
 			</p>
 			<p>
 				<b>Status Code: </b>{{ info.status }}
+			</p>
+			<p>
+				<b>Wayback Machine URL: </b> {{ info.waybackUrl }}
+			</p>
+			<p>
+				<b>Wayback Machine Timestamp: </b> {{ info.waybackTime }}
 			</p>
 			<p><a href="{% url 'delete_url' pk=info.pk %}">Delete this record</a></p>
 		</div>

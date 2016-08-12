@@ -6,4 +6,6 @@ class urlInfo(models.Model):
 	expanded = models.URLField(max_length=500)
 	status = models.CharField(max_length=20)
 	title = models.CharField(max_length=200)
+	waybackUrl = models.CharField(max_length=500)
+	waybackTime = models.CharField(max_length=500)
 
