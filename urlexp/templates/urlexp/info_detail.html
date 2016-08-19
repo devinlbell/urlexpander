@@ -24,6 +24,11 @@
 				<b>Wayback Machine Timestamp: </b> {{ info.waybackTime }}
 			</p>
 			<p><a href="{% url 'delete_url' pk=info.pk %}">Delete this record</a></p>
+			<p>
+				<b>Screen grab: </b> <br>
+				<img src= "{{ info.screen }}" alt="Screen grab" height="300" width="400">
+				
+			</p>
 	<h3>
 		Go back to the main page <a href="{% url 'url_list' %}">here</a><br>
 		<p>Or logout <a href="{% url 'logout_view' %}">here</a></p> 

@@ -30,6 +30,11 @@
 			<p>
 				<b>Wayback Machine Timestamp: </b> {{ info.waybackTime }}
 			</p>
+			<p>
+				<b>Screen grab: </b> <br>
+				<img src= "{{ info.screen }}" alt="Screen grab" height="300" width="400">
+				
+			</p>
 			<p><a href="{% url 'delete_url' pk=info.pk %}">Delete this record</a></p>
 		</div>
 		

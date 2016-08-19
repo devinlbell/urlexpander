@@ -8,4 +8,6 @@ class urlInfo(models.Model):
 	title = models.CharField(max_length=200)
 	waybackUrl = models.CharField(max_length=500)
 	waybackTime = models.CharField(max_length=500)
+	screen = models.CharField(max_length=500)
+
 
